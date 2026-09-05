@@ -4,8 +4,12 @@ services:
   - type: web
     name: nfc-restaurants
     runtime: static
-    buildCommand: npm install && npm run build
+    # --include=dev ensures Vite (a devDependency) is installed even if NODE_ENV=production
+    buildCommand: npm ci --include=dev && npm run build
     staticPublishPath: ./dist
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
     # SPA fallback so every path serves the app
     routes:
       - type: rewrite
