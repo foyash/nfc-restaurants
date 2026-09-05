@@ -6,7 +6,7 @@ const TIERS = [
   {
     name: "Ready-made", for: "Standard designs, ships fast — the lowest cost.",
     amt: "From $8", unit: "each",
-    prices: [["Menu / review stand", "$25"], ["Coasters & stickers", "$8"], ["Business card", "$8"], ["Keychain", "$12"]],
+    prices: [["Menu / review stand", "$20"], ["Coasters & stickers", "$8"], ["Business card", "$8"], ["Keychain", "$12"]],
     features: ["Pre-printed “Scan menu” & “Review on Google”", "No design setup — ships fast", "Great to try it out or for tight budgets"],
     cta: ["Order ready-made", "#contact", "btn--soft"],
   },

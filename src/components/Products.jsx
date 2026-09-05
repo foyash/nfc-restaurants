@@ -55,8 +55,8 @@ function Card({ children }) {
 
 // Ready-made / generic line — standard designs, lowest cost
 const GENERIC = [
-  { name: "Menu Stand", price: 25, img: "/assets/products/menu-stand-sq.jpg" },
-  { name: "Google Review Stand", price: 25, img: "/assets/products/review-stand-sq.jpg" },
+  { name: "Menu Stand", price: 20, img: "/assets/products/menu-stand-sq.jpg" },
+  { name: "Google Review Stand", price: 20, img: "/assets/products/review-stand-sq.jpg" },
   { name: "Review Coasters & Stickers", price: 8, img: "/assets/products/review-coasters-sq.jpg" },
   { name: "Business Card", price: 8, icon: <Waves size={22} />, tint: "#0071e3" },
   { name: "Keychain", price: 12, icon: <Gmini size={22} />, tint: "#111" },

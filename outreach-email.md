@@ -40,8 +40,8 @@ I'm [Your Name] from **NFC Restaurants**. We help local spots like [Restaurant N
 - Bulk discounts: 5+ save 10% · 10+ save 20% · 25+ save 30% · 50+ save 40%
 
 *2) Ready-made — standard design, lowest cost (a great way to try it):*
-- Menu Stand — **$25**
-- Google Review Stand — **$25**
+- Menu Stand — **$20**
+- Google Review Stand — **$20**
 - Review Coasters & Stickers — **$8**
 - Business Card — **$8**
 - Keychain — **$12**
