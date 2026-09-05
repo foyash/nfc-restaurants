@@ -4,24 +4,24 @@ import { scrollTo } from "../lib/smooth";
 
 const TIERS = [
   {
-    name: "Starter", for: "Individual NFC products for a single location.",
-    amt: "$20–$45", unit: "each",
-    hint: "Final price depends on product & quantity — more units, lower price.",
-    features: ["Menu stands, review cards & coasters", "Business cards & keychains", "Your logo, colors & links", "Design mockup before printing"],
-    cta: ["Design a product", "#customize", "btn--soft"],
+    name: "Ready-made", for: "Standard designs, ships fast — the lowest cost.",
+    amt: "From $8", unit: "each",
+    prices: [["Menu / review stand", "$25"], ["Coasters & stickers", "$8"], ["Business card", "$8"], ["Keychain", "$12"]],
+    features: ["Pre-printed “Scan menu” & “Review on Google”", "No design setup — ships fast", "Great to try it out or for tight budgets"],
+    cta: ["Order ready-made", "#contact", "btn--soft"],
   },
   {
-    name: "Growth", pop: true, for: "A full contactless setup for a busy restaurant.",
-    amt: "$80–$200", unit: "",
-    hint: "Bundle of stands, cards & coasters — priced by what you need.",
-    features: ["Everything in Starter", "Multiple products, bulk pricing", "Google review growth setup", "Digital menu & website starter"],
-    cta: ["Get a quote", "#contact", "btn--primary"],
+    name: "Custom-branded", pop: true, for: "Your logo, colors & links on every piece.",
+    amt: "From $15", unit: "each",
+    prices: [["Menu stand", "$45"], ["Google review card", "$45"], ["Coasters & stickers", "$15"], ["Business card", "$15"], ["Keychain", "$20"]],
+    bulk: "Bulk discounts: 5+ save 10% · 10+ 20% · 25+ 30% · 50+ 40%",
+    features: ["Fully branded — approve a mockup first", "Menu, order & pay, review growth", "Reprogram your links anytime"],
+    cta: ["Design yours", "#customize", "btn--primary"],
   },
   {
-    name: "Full Service", for: "Chains, multi-location brands & marketing.",
+    name: "Full Service", for: "Chains, websites & ongoing marketing.",
     amt: "Let's talk", talk: true, unit: "",
-    hint: "Custom hardware volumes, websites & ongoing marketing.",
-    features: ["Everything in Growth", "Social media marketing", "Full website build", "Multi-location rollout"],
+    features: ["Everything in Custom-branded", "Full website build", "Social media marketing", "Multi-location rollout & bulk pricing"],
     cta: ["Get in touch", "#contact", "btn--soft"],
   },
 ];
@@ -33,7 +33,7 @@ export default function Pricing() {
         <Reveal className="section__head center">
           <span className="kicker">Pricing</span>
           <h2 className="section__title">Simple pricing that scales with you.</h2>
-          <p className="section__lead">Per-item pricing that drops as your quantity grows. Need a full setup or multiple locations? Let's talk.</p>
+          <p className="section__lead">Two product lines — <b>ready-made</b> for the lowest cost, or <b>custom-branded</b> to your brand. Full service for chains &amp; marketing.</p>
         </Reveal>
         <Stagger className="ptiers">
           {TIERS.map((t) => (
@@ -46,7 +46,12 @@ export default function Pricing() {
                   <span className={`ptier__amt${t.talk ? " ptier__amt--talk" : ""}`}>{t.amt}</span>
                   {t.unit && <span className="ptier__unit">{t.unit}</span>}
                 </div>
-                <p className="ptier__hint">{t.hint}</p>
+                {t.prices && (
+                  <ul className="ptier__list">
+                    {t.prices.map(([l, p]) => <li key={l}><span>{l}</span><b>{p}</b></li>)}
+                  </ul>
+                )}
+                {t.bulk && <p className="ptier__bulk">{t.bulk}</p>}
                 <ul className="ticks">{t.features.map((f) => <li key={f}>{f}</li>)}</ul>
                 <a href={t.cta[1]} className={`btn ${t.cta[2]} btn--block`} onClick={(e) => { e.preventDefault(); scrollTo(t.cta[1]); }}>{t.cta[0]}</a>
               </motion.article>
