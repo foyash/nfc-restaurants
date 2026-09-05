@@ -1,0 +1,12 @@
+# dependencies
+node_modules
+
+# build output (Render builds this on deploy)
+dist
+
+# misc
+.DS_Store
+*.log
+.env
+.env.*
+.vite
