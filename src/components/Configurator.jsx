@@ -133,8 +133,7 @@ export default function Configurator({ design }) {
               </div>
             </div>
 
-            {/* preview */}
-            <div className="cz__preview">
+            {/* preview + price are direct children of .cz so the stage can stick on mobile */}
               <div className="cz__stage">
                 <div className="cz__spot" aria-hidden="true" />
                 <span className="cz__custom"><b>✦</b> Fully customizable</span>
@@ -171,7 +170,6 @@ export default function Configurator({ design }) {
                 </div>
                 <p className="cz__bulknote">Volume pricing: <b>5+ save 10%, 10+ save 20%, 25+ save 30%, 50+ save 40%.</b> Need more? <b>Get in touch</b> for a custom quote.</p>
               </div>
-            </div>
           </div>
         </Reveal>
       </div>

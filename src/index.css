@@ -218,8 +218,8 @@ html.still .hero{min-height:760px}
    CONFIGURATOR
    ========================================================= */
 .customize{background:var(--bg)}
-.cz{display:grid;grid-template-columns:.92fr 1.08fr;gap:1.6rem;background:var(--bg-2);border-radius:var(--r-2xl);padding:2rem;box-shadow:var(--shadow-sm)}
-.cz__controls{display:flex;flex-direction:column;gap:1.5rem}
+.cz{display:grid;grid-template-columns:.92fr 1.08fr;grid-template-areas:"controls stage" "controls price";gap:1.1rem 1.6rem;align-items:start;background:var(--bg-2);border-radius:var(--r-2xl);padding:2rem;box-shadow:var(--shadow-sm)}
+.cz__controls{grid-area:controls;display:flex;flex-direction:column;gap:1.5rem}
 .cz__group{display:flex;flex-direction:column;gap:.7rem}
 .cz__label{font-weight:600;font-size:.9rem}
 .cz__prods{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}
@@ -269,7 +269,8 @@ html.still .hero{min-height:760px}
 .cz-chip--w{background:linear-gradient(140deg,#fff,#e2e3e8)}
 
 /* preview stage */
-.cz__preview{display:flex;flex-direction:column;gap:1.2rem}
+.cz__stage{grid-area:stage}
+.cz__pricebar{grid-area:price}
 .cz__stage{position:relative;flex:1;min-height:466px;border-radius:var(--r-lg);overflow:hidden;display:grid;place-items:center;padding:2rem;
   background:radial-gradient(88% 68% at 50% 2%,#ffffff 0%,#eef0f4 56%,#e2e4ec 100%);
   box-shadow:inset 0 1px 0 #fff,inset 0 -46px 60px -44px rgba(0,0,0,.14)}
@@ -472,6 +473,10 @@ html.still .hero{min-height:760px}
   .hero__actions{width:100%}
   .hero__actions .btn{flex:1 1 auto;justify-content:center}
   .cz,.faq__grid,.cta__card{grid-template-columns:1fr}
+  /* configurator: product preview sticks at top while you scroll the options
+     (flex column — sticky inside a grid is confined to its row) */
+  .cz{display:flex;flex-direction:column;gap:1.1rem}
+  .cz__stage{order:-1;position:sticky;top:72px;z-index:30;min-height:auto;max-height:54vh;box-shadow:var(--shadow)}
   .steps,.pgrid,.bento,.ptiers,.why__stats{grid-template-columns:1fr 1fr}
   .scard--wide{grid-column:span 2}
 }
@@ -494,10 +499,14 @@ html.still .hero{min-height:760px}
   .section__lead{font-size:1.04rem}
   .pm__frame{width:232px}
   /* keep configurator previews inside the viewport */
-  .cz__stage{min-height:400px;padding:1.1rem}
-  .rp__panel{width:min(286px,82vw)}
-  .rp__card{width:min(340px,86vw)}
-  .rp__disc{width:min(270px,80vw);height:auto;aspect-ratio:1}
+  .cz__stage{padding:.9rem;max-height:52vh}
+  .rp{animation:none}
+  .rp__panel{width:min(276px,80vw);padding:16px 14px;gap:7px}
+  .rp__mtitle{font-size:1.28rem}
+  .rp__graphic{padding:9px 8px 7px}
+  .rp__card{width:min(330px,86vw);height:198px}
+  .rp__disc{width:min(242px,72vw);height:auto;aspect-ratio:1}
+  .rp__kdisc{width:184px;height:184px}
   .rp__cardname{font-size:1.05rem}
   .sticker{width:58px;top:-12px;left:-12px}
 }
