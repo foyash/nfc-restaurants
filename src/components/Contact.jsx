@@ -10,7 +10,7 @@ const INTERESTS = [
 // Get a FREE access key at https://web3forms.com using nfctagsupport@gmail.com,
 // then set VITE_WEB3FORMS_KEY (Render → Environment) OR paste it below.
 // Every submission is then emailed to nfctagsupport@gmail.com.
-const WEB3FORMS_KEY = import.meta.env.VITE_WEB3FORMS_KEY || "YOUR_ACCESS_KEY";
+const WEB3FORMS_KEY = import.meta.env.VITE_WEB3FORMS_KEY || "624e211a-3710-40d5-ae28-8849b0a1c8a3";
 const INBOX = "nfctagsupport@gmail.com";
 
 export default function Contact() {
