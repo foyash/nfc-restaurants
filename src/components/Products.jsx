@@ -53,8 +53,18 @@ function Card({ children }) {
   );
 }
 
+// Ready-made / generic line — standard designs, lowest cost
+const GENERIC = [
+  { name: "Menu Stand", price: 25, img: "/assets/products/menu-stand-sq.jpg" },
+  { name: "Google Review Stand", price: 25, img: "/assets/products/review-stand-sq.jpg" },
+  { name: "Review Coasters & Stickers", price: 8, img: "/assets/products/review-coasters-sq.jpg" },
+  { name: "Business Card", price: 8, icon: <Waves size={22} />, tint: "#0071e3" },
+  { name: "Keychain", price: 12, icon: <Gmini size={22} />, tint: "#111" },
+];
+
 export default function Products({ onDesign }) {
   const design = (id) => { onDesign?.(id); scrollTo("#customize"); };
+  const contact = (e) => { e.preventDefault(); scrollTo("#contact"); };
 
   return (
     <section className="section products" id="products">
@@ -62,7 +72,14 @@ export default function Products({ onDesign }) {
         <Reveal className="section__head center">
           <span className="kicker">The products</span>
           <h2 className="section__title">NFC hardware, made for hospitality.</h2>
-          <p className="section__lead">Every product is fully customizable with your logo and colors. Tap <i>or</i> scan built into each one — design yours below.</p>
+          <p className="section__lead">Two ways to order — <b>custom-branded</b> with your logo, or <b>ready-made</b> for the lowest cost.</p>
+        </Reveal>
+
+        {/* ---------- CUSTOM-BRANDED ---------- */}
+        <Reveal className="pgroup">
+          <span className="pgroup__tag pgroup__tag--custom">✦ Custom-branded</span>
+          <h3 className="pgroup__title">Your logo, colors &amp; links</h3>
+          <p>Fully designed to your brand. Approve a mockup before we print.</p>
         </Reveal>
 
         <Stagger className="pgrid">
@@ -137,10 +154,41 @@ export default function Products({ onDesign }) {
             <div className="pcard__body">
               <h3>NFC for Existing Cards</h3>
               <p>Add slim NFC stickers to cards &amp; menus you already own — no reprint.</p>
-              <div className="pcard__foot"><span className="price-chip">Add-on</span><a className="link-btn" href="#contact" onClick={(e) => { e.preventDefault(); scrollTo("#contact"); }}>Ask us ›</a></div>
+              <div className="pcard__foot"><span className="price-chip">Add-on</span><a className="link-btn" href="#contact" onClick={contact}>Ask us ›</a></div>
             </div>
           </Card></Item>
         </Stagger>
+
+        {/* ---------- READY-MADE / GENERIC ---------- */}
+        <Reveal className="pgroup pgroup--gap">
+          <span className="pgroup__tag pgroup__tag--ready">Ready-made</span>
+          <h3 className="pgroup__title">Standard designs, lowest cost</h3>
+          <p>Pre-printed “Scan our menu” &amp; “Review us on Google” designs — ships fast, no setup. Perfect to try it out or for tight budgets.</p>
+        </Reveal>
+
+        <Reveal>
+          <div className="ggrid">
+            {GENERIC.map((g) => (
+              <a key={g.name} className="gcard" href="#contact" onClick={contact}>
+                <span className="gcard__thumb" style={g.tint ? { background: g.tint, color: "#fff" } : undefined}>
+                  {g.img ? <img src={g.img} alt={g.name} loading="lazy" /> : g.icon}
+                </span>
+                <span className="gcard__info">
+                  <span className="gcard__name">{g.name}</span>
+                  <span className="gcard__price"><b>${g.price}</b> each · ready-made</span>
+                </span>
+                <span className="gcard__cta">Order ›</span>
+              </a>
+            ))}
+            <a className="gcard gcard--all" href="#contact" onClick={contact}>
+              <span className="gcard__info">
+                <span className="gcard__name">Bulk / mixed order?</span>
+                <span className="gcard__price">Get a custom quote — the more you order, the less you pay.</span>
+              </span>
+              <span className="gcard__cta">Get in touch ›</span>
+            </a>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
