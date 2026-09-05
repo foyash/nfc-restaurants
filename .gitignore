@@ -10,3 +10,7 @@ dist
 .env
 .env.*
 .vite
+
+# preview screenshots & legacy static backup (not part of the app)
+preview-*.png
+legacy/
