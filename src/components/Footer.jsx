@@ -25,8 +25,7 @@ export default function Footer() {
         ))}
         <div className="footer__col">
           <h4>Get in touch</h4>
-          <a href="mailto:hello@nfcrestaurants.com">hello@nfcrestaurants.com</a>
-          <a href="tel:+16175550123">(617) 555-0123</a>
+          <a href="mailto:nfctagsupport@gmail.com">nfctagsupport@gmail.com</a>
           <span className="footer__addr">Greater Boston, MA</span>
         </div>
       </div>
