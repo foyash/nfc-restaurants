@@ -185,13 +185,18 @@ html.still .hero{min-height:760px}
 .products{background:var(--bg-2)}
 .pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
 /* product groups (custom-branded vs ready-made) */
-.pgroup{max-width:640px;margin:2.2rem auto 1.5rem;text-align:center}
-.pgroup--gap{margin-top:4rem}
-.pgroup__tag{display:inline-block;font-weight:700;font-size:.78rem;padding:.35rem .8rem;border-radius:980px;margin-bottom:.7rem}
-.pgroup__tag--custom{background:rgba(0,113,227,.1);color:var(--accent)}
-.pgroup__tag--ready{background:#e9ebef;color:#5c5c62}
+.pgroup-panel{border-radius:var(--r-2xl);padding:1.8rem 1.6rem 2.2rem;margin-top:2.6rem}
+.pgroup-panel--custom{background:linear-gradient(180deg,#e9f2ff 0%,#f8fbff 62%);border:1px solid #d7e6fb}
+.pgroup-panel--ready{background:linear-gradient(180deg,#e7f7ef 0%,#f6fdf9 62%);border:1px solid #ccebdc;margin-top:1.8rem}
+.pgroup{max-width:660px;margin:.4rem auto 1.7rem;text-align:center}
+.pgroup__tag{display:inline-block;font-weight:700;font-size:.78rem;padding:.35rem .85rem;border-radius:980px;margin-bottom:.7rem}
+.pgroup__tag--custom{background:rgba(0,113,227,.12);color:var(--accent)}
+.pgroup__tag--ready{background:rgba(18,133,90,.14);color:#0c7e50}
 .pgroup__title{font-size:1.55rem;font-weight:600;letter-spacing:-.02em}
 .pgroup p{color:var(--muted);margin-top:.5rem}
+.pgroup__from{margin-top:.85rem;font-size:1.02rem}
+.pgroup__from b{font-size:1.5rem;font-weight:700;color:var(--ink)}
+.pgroup__from span{color:var(--muted-2)}
 /* ready-made compact cards */
 .ggrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem}
 .gcard{display:flex;align-items:center;gap:1rem;background:var(--card);border:1px solid var(--line-2);border-radius:var(--r-lg);padding:.9rem 1.1rem;box-shadow:var(--shadow-sm);transition:transform .25s var(--ease),box-shadow .25s,border-color .25s;color:inherit}

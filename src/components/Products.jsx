@@ -76,10 +76,12 @@ export default function Products({ onDesign }) {
         </Reveal>
 
         {/* ---------- CUSTOM-BRANDED ---------- */}
+        <div className="pgroup-panel pgroup-panel--custom">
         <Reveal className="pgroup">
           <span className="pgroup__tag pgroup__tag--custom">✦ Custom-branded</span>
           <h3 className="pgroup__title">Your logo, colors &amp; links</h3>
-          <p>Fully designed to your brand. Approve a mockup before we print.</p>
+          <p>Fully designed to your brand — approve a mockup before we print.</p>
+          <p className="pgroup__from">Starting from <b>$15</b> each <span>· bulk discounts up to 40% off</span></p>
         </Reveal>
 
         <Stagger className="pgrid">
@@ -158,12 +160,15 @@ export default function Products({ onDesign }) {
             </div>
           </Card></Item>
         </Stagger>
+        </div>
 
         {/* ---------- READY-MADE / GENERIC ---------- */}
-        <Reveal className="pgroup pgroup--gap">
+        <div className="pgroup-panel pgroup-panel--ready">
+        <Reveal className="pgroup">
           <span className="pgroup__tag pgroup__tag--ready">Ready-made</span>
           <h3 className="pgroup__title">Standard designs, lowest cost</h3>
           <p>Pre-printed “Scan our menu” &amp; “Review us on Google” designs — ships fast, no setup. Perfect to try it out or for tight budgets.</p>
+          <p className="pgroup__from">Starting from <b>$8</b> each <span>· ready-made, ships fast</span></p>
         </Reveal>
 
         <Reveal>
@@ -189,6 +194,7 @@ export default function Products({ onDesign }) {
             </a>
           </div>
         </Reveal>
+        </div>
       </div>
     </section>
   );
