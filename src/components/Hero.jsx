@@ -71,24 +71,7 @@ export default function Hero() {
         <motion.div className="hero__phone" style={{ y: phoneY }}
           initial={init({ opacity: 0, scale: 0.94 })} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.9, ease: EASE, delay: 0.3 }}>
           <PhoneMock />
-          <motion.div className="floaty floaty--a"
-            animate={STILL ? {} : { y: [0, -9, 0] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}>
-            <span className="g" /> New 5-star review
-          </motion.div>
-          <motion.div className="floaty floaty--b"
-            animate={STILL ? {} : { y: [0, 9, 0] }} transition={{ duration: 5.6, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}>
-            Paid in 8s
-          </motion.div>
         </motion.div>
-      </div>
-
-      <div className="wrap hero__features">
-        <ul className="features">
-          <li><b>No app</b> to download</li>
-          <li>Works on <b>iPhone &amp; Android</b></li>
-          <li><b>Tap</b> or <b>Scan</b></li>
-          <li>Live in about <b>a week</b></li>
-        </ul>
       </div>
     </section>
   );
